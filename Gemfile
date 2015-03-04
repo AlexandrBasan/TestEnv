@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#ruby-gemset=test_env
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,6 +35,8 @@ gem 'rails-html-sanitizer', '~> 1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'arel', '6.0.0.beta2'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
