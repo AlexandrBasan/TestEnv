@@ -7,4 +7,11 @@ class StaticPagesController < ApplicationController
 
   def website
   end
+
+  def companies
+    respond_to do |format|
+      format.html {  }
+      format.js
+    end
+  end
 end

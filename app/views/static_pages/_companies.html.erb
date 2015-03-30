@@ -1,3 +1,11 @@
-if params[:delivery_status]
-if current_user.admin?
-if params[:delivery_status] == "ok_delivered"
+<% if params[:page] %>
+    <% if params[:page] == "1" %>
+        <%= render 'static_pages/c1' %>
+    <% elsif params[:page] == "2" %>
+        <%= render 'static_pages/c2' %>
+    <% elsif params[:page] == "3" %>
+        <%= render 'static_pages/c3' %>
+    <% end %>
+<% else %>
+    <% redirect_to root_path %>
+<% end %>
