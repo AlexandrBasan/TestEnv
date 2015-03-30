@@ -1,9 +1,14 @@
 source 'https://rubygems.org'
 #ruby-gemset=test_env
-
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.beta1'
+gem 'rails', '4.2.1'
+# Bootstrap
+gem 'bootstrap-sass'
+# Pagination
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -36,7 +41,7 @@ gem 'rails-html-sanitizer', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'arel', '6.0.0.beta2'
+gem 'arel'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150304015805) do
 
-  create_table "sandboxes", force: true do |t|
+  create_table "sandboxes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
