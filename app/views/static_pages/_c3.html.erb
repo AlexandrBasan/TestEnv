@@ -14,3 +14,53 @@
   <div class="col-md-1">.col-md-3</div>
 </div>
 <!-- tab_3 -->
+
+
+
+<% link_result = Array.new([]) %>
+<% img_result = Array.new([]) %>
+<% require 'open-uri' %>
+
+<% uri = URI.parse('http://teleport.co.nz') %>
+<% data = uri.read %>
+
+<% @links = data.scan(URI.regexp(%w(http https))) %>
+</br>
+<% @links.each do |element| %>
+    <% element.each do |link| %>
+        <!-- http links -->
+        <% if link =~ /[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?/ix %>
+            <% link_result.push(link) %>
+        <% end %>
+    <% end %>
+<% end %>
+</br>
+</br>
+</br>
+<!-- src links -->
+<% @img = data.scan(/src\s*=\s*(\"|')(([^\"';]*))(\"|')/) %>
+</br>
+<% @img.each do |element| %>
+    <% element.each do |link| %>
+        <!-- links in src tag -->
+        <% if link =~ /\w{1,100}\W{1,100}\w{1,100}.(?:jpe?g|png|gif)(?!\"|\')/ %>
+            <% img_result.push(link) %>
+        <% end %>
+    <% end %>
+<% end %>
+
+<% img_result %>
+<% link_result.each_with_index do |result, index| %>
+    <% array_element = link_result[index] %>
+    <b><%= array_element %></b>
+    <% @b = array_element[4..8] %>
+    <% img_result.each_with_index do |img, index| %>
+        <% image = img %>
+        <% if image.include? @b %>
+            - <%= image %>,
+        <% else %>
+        <% end %>
+    <% end %>
+
+    </br>
+<% end %>
