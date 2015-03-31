@@ -78,7 +78,8 @@ p {
 /*Menu styling - FOOTER*/
 .container {
  /* width: 910px; */
-  width: 890px;
+//  width: 890px;
+  width: 95%;
 }
 
 .navbar .nav.pull-right {
@@ -113,4 +114,9 @@ input {
 .field_with_errors {
   @extend .form-group;
   @extend .has-error;
+}
+
+.company_image {
+  width: 100px;
+  height: 60px;
 }

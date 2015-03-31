@@ -17,7 +17,9 @@
 <%= a += b %>
 
 
+
 <!-- General page -->
+<div class="container">
 <!-- Navigation tabs -->
 <div role="tabpanel">
   <!-- Nav tabs -->
@@ -28,11 +30,15 @@
   </ul>
   <!-- Tab panes -->
   <div class="tab-content">
-    <div class="container">
+
         <div id="companies"></div>
-        <div id="result"></div>
-    </div>
+        <div id="result">
+          <!-- Main -->
+          <%= render 'static_pages/c1' %>
+        </div>
+
   </div>
+</div>
 </div>
 
 <!-- Tabs script -->
