@@ -1,15 +1,5 @@
 <!-- tab_1 -->
 <div class="row">
-  <% if @images.nil? %>
-      <div class="col-md-12"><h2>Sorry. We don't have any companies yet.</h2></div>
-  <% else %>
-      <% @images.each do |image| %>
-          <div class="col-md-1">
-            <a href="http://<%= 'link' %>" target="_blank">
-              <%= image_tag "companies/NZ/favorites/#{image.split('/').last}" %>
-            </a>
-          </div>
-      <% end %>
       <div class="col-md-1">.col-md-1</div>
       <div class="col-md-1">.col-md-1</div>
       <div class="col-md-1">.col-md-1</div>
@@ -22,7 +12,5 @@
       <div class="col-md-1">.col-md-1</div>
       <div class="col-md-1">.col-md-1</div>
       <div class="col-md-1">.col-md-1</div>
-  <% end %>
-
 </div>
 <!-- tab_1 -->

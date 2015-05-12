@@ -1,6 +1,5 @@
 <% if params[:page] %>
     <% if params[:page] == "1" %>
-        <% @images = Dir.glob("app/assets/images/companies/NZ/favorites/*.{gif,jpg,png}") %>
         <%= render 'static_pages/c1' %>
     <% elsif params[:page] == "2" %>
         <%= render 'static_pages/c2' %>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   get 'static_pages/website'
 
-  get '/companies_:page' => 'static_pages#companies', as: 'companies'
+  get '/data:page' => 'static_pages#data', as: 'data'
 
   resources :sandboxes
 
