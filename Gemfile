@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.6'
 # Bootstrap
 gem 'bootstrap-sass'
 # Pagination
@@ -41,9 +41,15 @@ gem 'rails-html-sanitizer', '~> 1.0'
 
 gem 'arel'
 
+# print better log #https://github.com/michaeldv/awesome_print
+gem 'awesome_print', '1.6.1'
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  gem 'better_errors', '1.1.0'
+  gem "binding_of_caller"
 end
 
 group :development, :test do
@@ -65,4 +71,3 @@ group :production do
   # newrelic.com server monitoring
   gem 'newrelic_rpm'
 end
-
