@@ -67,10 +67,12 @@
         <h2><%= link_to (type[:programm_link]), type[:programm_link] %></h2>
       <% else %>
         <h3><%= type[:full_name] %></h3>
+        <h4>Description:</h4>
         <b>Part:</b> <%= type[:part] %><br />
         <b>Day:</b> <%= type[:day] %><br />
         <b>Exsersisy type:</b> <%= type[:ex_type] %><br />
         <% if type[:ex_types].present? %>
+          <h4>Rounds:</h4>
           <% type[:ex_types].each do |round| %>
             <b>Round name:</b> <%= round[:name] %><br />
             <b>Repeats:</b> <%= round[:repeat] %><br />
