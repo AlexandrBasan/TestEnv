@@ -52,3 +52,47 @@
 <!-- Tabs script -->
 <!-- General page -->
 <%= render 'static_pages/lazyload' %>
+
+<!-- File reader -->
+<div class="container">
+  <pre>
+    <%= JSON.pretty_generate(@all_data) %>
+  </pre>
+  <!-- All data -->
+  <% @all_data.each do |exs_type| %>
+    <!-- Program data -->
+    <% exs_type.each_with_index do |type, index| %>
+      <% if index == 0 %>
+        <h1><%= type[:programm_name] %></h1>
+        <h2><%= link_to (type[:programm_link]), type[:programm_link] %></h2>
+      <% else %>
+        <h3><%= type[:full_name] %></h3>
+        <b>Part:</b> <%= type[:part] %><br />
+        <b>Day:</b> <%= type[:day] %><br />
+        <b>Exsersisy type:</b> <%= type[:ex_type] %><br />
+        <% if type[:ex_types].present? %>
+          <% type[:ex_types].each do |round| %>
+            <b>Round name:</b> <%= round[:name] %><br />
+            <b>Repeats:</b> <%= round[:repeat] %><br />
+            <ul>
+              <!-- Round -->
+              <% round[:exsersises].each do |exsersise| %>
+                <ol>
+                  <%= exsersise %>
+                  <%# repeat_times = exsersise[/(\((.*?)\)|- Max)/,1] %>
+                  <%# exsersise.slice!("(#{repeat_times})") if repeat_times.present? %>
+                  <%#= repeat_times.present? ? "#{exsersise}. <b>Times:</b> #{repeat_times}".html_safe : "#{exsersise}. <b>Times:</b> MAX".html_safe %>.
+                </ol>
+              <% end %>
+              <!-- Round -->
+            </ul>
+
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+    <!-- Program data -->
+  <% end %>
+  <!-- All data -->
+</div>
+<!-- File reader -->
